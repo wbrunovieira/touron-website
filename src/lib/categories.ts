@@ -207,7 +207,7 @@ export const categories: Category[] = [
       "Primer, fundo e vernizes",
       "Colas de contato e adesivos",
     ],
-    brands: ["Proauto", "Itaqua", "Massa Fix"],
+    brands: ["Proauto", "Itaqua", "Massa Fix", "Tek Bond"],
   },
   {
     slug: "sprays-e-manutencao",

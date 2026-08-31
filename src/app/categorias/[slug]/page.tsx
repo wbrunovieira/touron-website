@@ -25,7 +25,7 @@ export async function generateMetadata({
   if (!category) return {};
   return {
     title: `${category.name} em Petrópolis/RJ`,
-    description: `${category.blurb} Consulte disponibilidade na ${business.name}, no Centro de Petrópolis, com entrega no 1º distrito.`,
+    description: `${category.blurb} Consulte disponibilidade na ${business.name}, em Petrópolis/RJ, com entrega no 1º distrito.`,
     alternates: { canonical: `/categorias/${category.slug}` },
     openGraph: {
       title: `${category.name} — ${business.name}`,

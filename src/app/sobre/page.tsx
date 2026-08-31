@@ -12,7 +12,7 @@ import { brands } from "@/lib/brands";
 
 export const metadata: Metadata = {
   title: "A loja — mais de 50 anos em Petrópolis",
-  description: `Conheça a história da ${business.name}: desde ${business.foundedYear} no Centro de Petrópolis, atendendo motoristas da serra com peças, óleos e acessórios.`,
+  description: `Conheça a história da ${business.name}: desde ${business.foundedYear} na Rua Coronel Veiga, em Petrópolis, atendendo motoristas da serra com peças, óleos e acessórios.`,
   alternates: { canonical: "/sobre" },
 };
 
@@ -56,7 +56,7 @@ const valores = [
   {
     icon: MapPin,
     title: "Raiz petropolitana",
-    text: "Somos do Centro, conhecemos as ladeiras, o clima e o que a frota daqui exige de manutenção.",
+    text: "Somos daqui: conhecemos as ladeiras, o clima da serra e o que a frota de Petrópolis exige de manutenção.",
   },
 ];
 
@@ -65,8 +65,8 @@ export default function SobrePage() {
     <>
       <PageHeader
         eyebrow="A loja"
-        title="Desde 1974 no"
-        highlight="Centro de Petrópolis"
+        title="Desde 1974 na"
+        highlight="Rua Coronel Veiga"
         description={`${yearsInBusiness} anos na Rua Coronel Veiga, atendendo os motoristas da serra. ${business.tagline}`}
         image="/images/prateleira-aditivos.webp"
         breadcrumbs={[

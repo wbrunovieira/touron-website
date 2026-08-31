@@ -4,7 +4,8 @@
  */
 export const business = {
   name: "Auto Peças Tourón",
-  legalName: "Auto Peças Tourón",
+  legalName: "Auto Peças Tourón Ltda",
+  cnpj: "27.715.598/0001-51",
   shortName: "Tourón",
   foundedYear: 1974,
   tagline: "Desde 1974 levando o melhor para você e seu carro.",
@@ -12,7 +13,10 @@ export const business = {
     "Auto peças, óleos, lubrificantes, baterias, acessórios e produtos de estética automotiva em Petrópolis/RJ. Mais de 50 anos atendendo motoristas da região, com entrega no primeiro distrito.",
   address: {
     street: "Rua Coronel Veiga, 233",
-    district: "Centro",
+    // Correios/ViaCEP (todas as 11 faixas da rua), cadastro do CNPJ na Receita
+    // e o Google Business Profile registram "Coronel Veiga". A arte antiga da
+    // loja dizia "Centro" — mas a loja fica a 2,2 km da Catedral.
+    district: "Coronel Veiga",
     city: "Petrópolis",
     state: "RJ",
     stateFull: "Rio de Janeiro",
@@ -31,19 +35,18 @@ export const business = {
     "https://www.google.com/maps/place/Tour%C3%B3n-Auto+Pe%C3%A7as/@-22.5224025,-43.1899729,17z",
   mapsEmbed:
     "https://www.google.com/maps?q=Tour%C3%B3n%20Auto%20Pe%C3%A7as%2C%20R.%20Cel.%20Veiga%20233%2C%20Petr%C3%B3polis%20-%20RJ&output=embed",
-  /**
-   * Horário NÃO confirmado com o cliente. Enquanto `hoursConfirmed` for false,
-   * o site não exibe horário nem publica `openingHours` no JSON-LD — publicar
-   * horário errado é pior do que não publicar nenhum.
-   * Ao confirmar: preencher `hours`/`hoursSchema` e virar a flag para true.
+/**
+   * Horário conferido em 31/08/2026 no Google Business Profile da loja e
+   * corroborado por locaisdobrasil e OpenStreetMap. Se a flag voltar a false,
+   * o site esconde o horário e o JSON-LD omite `openingHours`.
    */
-  hoursConfirmed: false,
+  hoursConfirmed: true,
   hours: [
-    { label: "Segunda a sexta", value: "" },
-    { label: "Sábado", value: "" },
-    { label: "Domingo e feriados", value: "" },
+    { label: "Segunda a sexta", value: "08h às 18h" },
+    { label: "Sábado", value: "08h às 13h" },
+    { label: "Domingo e feriados", value: "Fechado" },
   ],
-  hoursSchema: [] as string[],
+  hoursSchema: ["Mo-Fr 08:00-18:00", "Sa 08:00-13:00"],
   /** Formas de pagamento também não confirmadas com o cliente. */
   paymentConfirmed: false,
   payment: "Dinheiro, PIX, Cartão de débito, Cartão de crédito",
@@ -67,7 +70,16 @@ export const business = {
   },
 } as const;
 
-export const siteUrl = "https://touronautopecas.com.br";
+/**
+ * ATENÇÃO: `touronautopecas.com.br` NÃO está registrado (verificado no
+ * registro.br em 31/08/2026 — o domínio está livre). Enquanto não for
+ * comprado, o canônico, o sitemap, o robots e o Open Graph precisam apontar
+ * para o host que realmente existe, senão o site fica inindexável e o preview
+ * do WhatsApp dá 404.
+ * Ao registrar o domínio: definir NEXT_PUBLIC_SITE_URL no projeto da Vercel.
+ */
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://touron-website.vercel.app";
 
 export const yearsInBusiness = new Date().getFullYear() - business.foundedYear;
 

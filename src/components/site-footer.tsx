@@ -128,8 +128,8 @@ export function SiteFooter() {
       <div className="border-t border-white/8">
         <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-ink-500 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {business.name}. Todos os direitos
-            reservados.
+            © {new Date().getFullYear()} {business.legalName} · CNPJ{" "}
+            <span className="font-mono">{business.cnpj}</span>
           </p>
           <p className="font-mono tracking-wide">
             {business.address.city}/{business.address.state} · desde{" "}

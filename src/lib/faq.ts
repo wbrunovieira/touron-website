@@ -21,6 +21,6 @@ export const faq = [
   },
   {
     q: "Preciso agendar para ser atendido?",
-    a: "Não. É só chegar na Rua Coronel Veiga, 233, no Centro. Se preferir, adianta o pedido pelo WhatsApp e a gente deixa separado — aproveita e confirma o horário do dia.",
+    a: "Não. É só chegar na Rua Coronel Veiga, 233. Se preferir, adianta o pedido pelo WhatsApp e a gente deixa separado — aproveita e confirma o horário do dia.",
   },
 ];

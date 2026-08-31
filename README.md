@@ -37,68 +37,79 @@ public/
 Todo CTA monta um link `wa.me` com a mensagem já preenchida
 (`src/lib/whatsapp.ts`). Não há carrinho, checkout, estoque nem painel admin.
 
-## Antes de publicar em produção — confirmar com o cliente
+## Antes de publicar em produção
 
-Uma auditoria de conteúdo (agente independente + verificação manual contra o
-export do Instagram) removeu do site tudo o que não tinha lastro. O que sobrou
-de pendente está abaixo, em ordem de risco.
+Duas auditorias independentes rodaram sobre o conteúdo: uma contra o export do
+Instagram, outra contra fontes públicas (Correios/ViaCEP, Receita Federal,
+IBGE, SIG da Prefeitura de Petrópolis, registro.br, Google Business Profile).
+O que dava para corrigir sozinho já foi. O que sobrou depende do dono.
 
-### Bloqueadores
+### Bloqueador
 
-- [ ] **A entrega sem taxa ainda vale?** A arte "NÓS LEVAMOS ATÉ VOCÊ — SEM
-      TAXAS* — * Entregas no primeiro distrito de Petrópolis" é **de 06/08/2022**.
-      A bio atual do perfil ainda fala em entregas, mas não repete "sem taxa".
-      É a promessa mais visível do site inteiro — confirmar antes de publicar,
-      e perguntar se há **pedido mínimo**.
-- [ ] **Horário de funcionamento.** Hoje `hoursConfirmed: false` em
-      `src/lib/business.ts`: o site mostra "confirme pelo WhatsApp" e o JSON-LD
-      **não** publica `openingHours`. Ao confirmar, preencher `hours` +
-      `hoursSchema` e virar a flag.
-- [ ] **Formas de pagamento.** Mesmo mecanismo: `paymentConfirmed: false`.
-- [ ] **Domínio.** `siteUrl` aponta para `touronautopecas.com.br`, que vai para
-      o sitemap e para as URLs canônicas. Confirmar que o domínio é deles.
-- [ ] **Definir a área de entrega por um critério que o cliente consiga
-      conferir sozinho** — lista de bairros ou raio em km a partir da loja.
-      "1º distrito" não serve: a própria Prefeitura declara que *"os bairros de
-      Petrópolis não são formalizados"* e que a divisa distrital será
-      redesenhada. Bairros ficam partidos entre o 1º e o 2º distrito (Caxambu
-      47%/52%, Rocio 57%/43%, Carangola 61%/39%) e **não existe consulta de
-      distrito por endereço ou CEP**. O 1º distrito tem ~132 km², dos quais
-      ~41 km² são zona rural de serra. Pelo CDC art. 30 a oferta anunciada
-      vincula — com um critério que ninguém consegue verificar, isso é risco
-      real. A loja está confirmadamente dentro do 1º distrito (a Rua Coronel
-      Veiga está 100% nele), então o problema é só a fronteira externa.
-      *Mitigação já aplicada:* o site pede em todo lugar para confirmar a
-      cobertura do endereço pelo WhatsApp.
-- [ ] **Bairro: "Centro" ou "Coronel Veiga"?** A arte da loja diz "Centro"; a
-      ficha do Google Maps registra "R. Cel. Veiga, 233 - **Cel. Veiga**,
-      Petrópolis - RJ, 25655-151". O site usa "Centro". Para SEO local o
-      endereço do site deve bater exatamente com o do Google Meu Negócio —
-      alinhar os dois.
+- [ ] **Registrar `touronautopecas.com.br`.** Verificado no registro.br em
+      31/08/2026: **o domínio está livre**. Qualquer um registra por ~R$ 40/ano,
+      inclusive um concorrente. Registrar também `autopecastouron.com.br` como
+      defensiva. Enquanto isso, `siteUrl` aponta para o host da Vercel — ao
+      comprar o domínio, basta definir `NEXT_PUBLIC_SITE_URL` no projeto.
 
-### Revisar com quem está no balcão
+### Confirmar com o dono
 
-- [ ] **Itens de cada categoria** (`src/lib/categories.ts`). Cerca de metade da
-      lista é dedução razoável para uma auto peças, não algo visto nas fotos.
-      Nada ali é falsificável (não há preço, spec nem promessa de serviço), e a
-      página avisa que é amostra — mas vale o dono cortar o que não trabalha.
-- [ ] **Marcas** (`src/lib/brands.ts`). A lista só contém marcas lidas em foto.
-      Faltam certamente outras que a loja trabalha.
+- [ ] **1974 ou 1981?** O logotipo e a bio dizem "desde 1974". O CNPJ
+      27.715.598/0001-51 registra início de atividade em **17/12/1981**
+      (Receita Federal, três espelhos independentes). É comum a empresa operar
+      antes de formalizar, mas a diferença muda "52 anos" para 45. Enquanto não
+      confirmar, `foundingDate` foi retirado do JSON-LD — o texto "desde 1974"
+      continua, por ser afirmação da própria marca.
+- [ ] **A entrega sem taxa ainda vale?** A arte "SEM TAXAS* / * 1º distrito de
+      Petrópolis" é de **06/08/2022**. Perguntar também se há **pedido mínimo**.
+- [ ] **Trocar "1º distrito" por lista de bairros ou raio em km.** A Prefeitura
+      declara que *"os bairros de Petrópolis não são formalizados"* e a divisa
+      distrital será redesenhada; bairros ficam partidos entre o 1º e o 2º
+      (Caxambu 47%/52%, Rocio 57%/43%). Não existe consulta de distrito por
+      endereço ou CEP. Pelo CDC art. 30 a oferta vincula. *Mitigação aplicada:*
+      o site pede em todo lugar para confirmar a cobertura pelo WhatsApp.
+- [ ] **Mecânica, elétrica e borracharia.** O Street View mostra placas
+      "Tourón MECÂNICA", "Tourón ELÉTRICA" e "Tourón BORRACHARIA" na fachada.
+      Se esses serviços existem, faltam no site inteiro — e são um argumento de
+      venda grande.
+- [ ] **Telefone (24) 2245-3197.** Aparece no letreiro da fachada e em vários
+      guias. Ativo ou linha antiga?
+- [ ] **Formas de pagamento** (`paymentConfirmed: false`).
+- [ ] **Itens de cada categoria** (`src/lib/categories.ts`) — metade é dedução
+      razoável, não algo visto em foto. Nada falsificável, mas vale o dono cortar
+      o que não trabalha.
 
-### Já corrigido nesta auditoria
+### Sugerir ao dono (fora do site)
 
-Removidos por falta de lastro: horário e formas de pagamento no JSON-LD,
-"entrega no mesmo dia", "resposta em minutos", "teste de carga e alternador",
-"orientação de instalação", "originais e OEM", "baterias 45Ah a 100Ah",
-"fluido de freio DOT 3 e DOT 4", óleo "mineral", a linha do tempo "Anos 90",
-"três gerações atendidas" e "desde 1974 no mesmo endereço".
-Corrigidos nomes de marca lidos errado: Cindy→**Cinoy**, Chesf→**Chesy Lub**,
-Car Lub→**Car 80**, Fresh Car→**Luxcar**, Speed Way→**SW**. Marcas atribuídas
-a categorias onde não aparecem foram removidas.
+- [ ] **Cadastrar o site no Google Business Profile** — hoje a ficha não tem
+      site, mostra "Adicionar website".
+- [ ] **Corrigir o CEP no cadastro da Receita**: consta 25655-171, cuja faixa é
+      "de 620 a 1136"; o correto para o nº 233 é **25655-151**.
+- [ ] **Corrigir o número no Bing Places**: lista "Rua Coronel Veiga, 259".
 
-Mantidos por terem evidência direta: "desde 1974" (bio + logotipo), endereço,
-telefone, WhatsApp, "sem taxas / 1º distrito" (arte da loja) e a nota
-**4,3 · 142 avaliações**, lida na ficha do Google Maps em 31/08/2026.
+### Confirmado por fonte pública
+
+CEP **25655-151** (Correios/ViaCEP) · bairro **Coronel Veiga** — as 11 faixas
+da rua retornam Coronel Veiga, nenhuma retorna "Centro", e a Receita e o Google
+concordam · horário **Seg–Sex 08h–18h, Sáb 08h–13h, Dom fechado** (Google
+Business Profile, corroborado por locaisdobrasil e OpenStreetMap) · telefone
+**(24) 2243-1030** em cinco fontes · WhatsApp **(24) 99305-9487** (bio) · nota
+**4,3 · 142 avaliações** (lida na ficha do Google em 31/08/2026 — sem espelho
+independente, os agregadores brasileiros mantêm avaliação própria) · razão
+social **AUTO PECAS TOURON LTDA**, CNPJ **27.715.598/0001-51**, CNAE 4530-7/03.
+
+### Já corrigido
+
+Bairro "Centro" → **Coronel Veiga** em todo o site. Horário reposto (estava
+removido por suspeita, mas batia com o GBP). Canônico, sitemap, robots e Open
+Graph tirados do domínio inexistente. CNPJ e razão social no rodapé.
+Removidos por falta de lastro: "entrega no mesmo dia", "resposta em minutos",
+"teste de carga e alternador", "orientação de instalação", "originais e OEM",
+"baterias 45Ah a 100Ah", "fluido de freio DOT 3 e DOT 4", óleo "mineral", a
+linha do tempo "Anos 90", "três gerações" e "no mesmo endereço desde 1974".
+Nomes de marca corrigidos pelo rótulo lido na foto: Cindy→**Cinoy**,
+Chesf→**Chesy Lub**, Car Lub→**Car 80**, Fresh Car→**Luxcar**,
+Speed Way→**SW**.
 
 ## Dados de origem
 

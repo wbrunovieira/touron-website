@@ -1,20 +1,43 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowRight, MapPin, ShieldCheck, Star, Truck } from "lucide-react";
 import { ButtonAnchor, ButtonLink } from "./ui/button";
 import { Glow, GridBackdrop } from "./ui/glow";
+import { HeroCarousel, type Slide } from "./hero-carousel";
 import { WhatsappIcon } from "./ui/category-icon";
 import { business, yearsInBusiness } from "@/lib/business";
 import { waMessages, whatsappLink } from "@/lib/whatsapp";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
+const slides: Slide[] = [
+  {
+    src: "/images/hero-loja-baterias.webp",
+    alt: "Expositor de baterias automotivas no salão da loja Auto Peças Tourón",
+  },
+  {
+    src: "/images/hero-loja-escaninhos.webp",
+    alt: "Balcão da Tourón com as prateleiras de peças ao fundo",
+  },
+  {
+    src: "/images/hero-loja-balcao.webp",
+    alt: "Produtos de limpeza automotiva no balcão, com os escaninhos de peças atrás",
+  },
+  {
+    src: "/images/hero-loja-aditivos.webp",
+    alt: "Aditivos e produtos de manutenção nas prateleiras da loja",
+  },
+  {
+    src: "/images/hero-loja-tintas.webp",
+    alt: "Linha de tintas, massas e material de repintura da Tourón",
+  },
+];
+
 const trust = [
   { icon: Truck, label: "Entrega grátis", sub: "1º distrito" },
   { icon: ShieldCheck, label: "Marcas de linha", sub: "Lubrax · Bardahl · Kondor" },
-  { icon: MapPin, label: "Centro", sub: "Cel. Veiga, 233" },
+  { icon: MapPin, label: "Petrópolis / RJ", sub: "Cel. Veiga, 233" },
 ];
 
 export function Hero() {
@@ -151,18 +174,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.15, ease }}
           className="relative mx-auto w-full max-w-lg"
         >
-          <div className="relative aspect-4/5 overflow-hidden rounded-5xl ring-1 ring-white/12">
-            <Image
-              src="/images/hero-loja-baterias.webp"
-              alt="Expositor de baterias automotivas no salão da loja Auto Peças Tourón, em Petrópolis"
-              fill
-              priority
-              sizes="(max-width: 1024px) 90vw, 480px"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-linear-0 from-navy-950 via-navy-950/25 to-transparent" />
-            <div className="absolute inset-0 bg-linear-135 from-navy-800/45 via-transparent to-ember-600/15" />
-          </div>
+          <HeroCarousel slides={slides} />
 
           {/* cartão flutuante — entrega */}
           <motion.div

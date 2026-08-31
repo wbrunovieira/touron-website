@@ -20,6 +20,7 @@ export const brands = [
   "WD-40",
   "Gitanes",
   "Indisa",
+  "Tek Bond",
   "Cinoy",
   "Hulk",
   "SW",

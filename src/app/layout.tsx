@@ -69,7 +69,6 @@ const jsonLd = {
   description: business.description,
   url: siteUrl,
   telephone: "+552422431030",
-  foundingDate: String(business.foundedYear),
   image: `${siteUrl}/brand/icon-512.png`,
   logo: `${siteUrl}/brand/icon-512.png`,
   priceRange: "$$",

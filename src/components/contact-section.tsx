@@ -18,7 +18,7 @@ export function ContactSection() {
           eyebrow="Contato"
           title="Passa lá no"
           highlight="Cel. Veiga, 233"
-          description="Estamos no Centro de Petrópolis, pertinho de tudo. Chega sem hora marcada ou adianta o pedido pelo WhatsApp."
+          description="Estamos na Rua Coronel Veiga, com estacionamento na porta. Chega sem hora marcada ou adianta o pedido pelo WhatsApp."
           align="center"
         />
 

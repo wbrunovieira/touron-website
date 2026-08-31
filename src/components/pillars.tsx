@@ -12,7 +12,7 @@ const pillars = [
   {
     icon: Award,
     title: "Meio século de balcão",
-    text: "Desde 1974 na Rua Coronel Veiga, no Centro. Mais de meio século vendo o que roda — e o que quebra — nas ruas de Petrópolis.",
+    text: "Desde 1974 na Rua Coronel Veiga. Mais de meio século vendo o que roda — e o que quebra — nas ruas de Petrópolis.",
   },
   {
     icon: Handshake,
@@ -42,7 +42,7 @@ export function Pillars() {
             eyebrow="Por que a Tourón"
             title="Loja de bairro com"
             highlight="cabeça de 2026"
-            description="A confiança de quem está há mais de 50 anos no Centro de Petrópolis, com a praticidade de resolver tudo pelo celular."
+            description="A confiança de quem está há mais de 50 anos na Rua Coronel Veiga, com a praticidade de resolver tudo pelo celular."
           />
 
           <RevealGroup className="mt-12 grid gap-4 sm:grid-cols-3">
