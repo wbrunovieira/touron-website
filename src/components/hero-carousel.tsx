@@ -88,8 +88,8 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
           </motion.div>
         </AnimatePresence>
 
-        <div className="pointer-events-none absolute inset-0 bg-linear-0 from-navy-950 via-navy-950/25 to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-linear-135 from-navy-800/40 via-transparent to-ember-600/15" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-0 from-navy-950/75 via-navy-950/10 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-135 from-navy-800/25 via-transparent to-ember-600/12" />
 
         {slides.length > 1 ? (
           <>

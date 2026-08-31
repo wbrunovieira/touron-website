@@ -68,7 +68,7 @@ export default function SobrePage() {
         title="Desde 1974 na"
         highlight="Rua Coronel Veiga"
         description={`${yearsInBusiness} anos na Rua Coronel Veiga, atendendo os motoristas da serra. ${business.tagline}`}
-        image="/images/prateleira-aditivos.webp"
+        image="/images/loja-fachada-frontal.webp"
         breadcrumbs={[
           { href: "/", label: "Início" },
           { href: "/sobre", label: "A loja" },
@@ -126,10 +126,10 @@ export default function SobrePage() {
           <Reveal delay={0.1}>
             <div className="card-edge overflow-hidden rounded-5xl">
               <Image
-                src="/images/post-limpa-vidros.webp"
-                alt="Balcão da Auto Peças Tourón com produtos de limpeza automotiva"
-                width={900}
-                height={1125}
+                src="/images/loja-fachada-calcada.webp"
+                alt="Fachada da Auto Peças Tourón na Rua Coronel Veiga, em Petrópolis"
+                width={1200}
+                height={1500}
                 sizes="(max-width: 1024px) 100vw, 520px"
                 className="h-full w-full object-cover"
               />
