@@ -4,35 +4,14 @@ import { motion } from "motion/react";
 import { ArrowRight, MapPin, ShieldCheck, Star, Truck } from "lucide-react";
 import { ButtonAnchor, ButtonLink } from "./ui/button";
 import { Glow, GridBackdrop } from "./ui/glow";
-import { HeroCarousel, type Slide } from "./hero-carousel";
+import { HeroCarousel } from "./hero-carousel";
+import { heroSlides } from "@/lib/hero-slides";
 import { WhatsappIcon } from "./ui/category-icon";
 import { business, yearsInBusiness } from "@/lib/business";
 import { waMessages, whatsappLink } from "@/lib/whatsapp";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-const slides: Slide[] = [
-  {
-    src: "/images/hero-loja-baterias.webp",
-    alt: "Expositor de baterias automotivas no salão da loja Auto Peças Tourón",
-  },
-  {
-    src: "/images/hero-loja-escaninhos.webp",
-    alt: "Balcão da Tourón com as prateleiras de peças ao fundo",
-  },
-  {
-    src: "/images/hero-loja-balcao.webp",
-    alt: "Produtos de limpeza automotiva no balcão, com os escaninhos de peças atrás",
-  },
-  {
-    src: "/images/hero-loja-aditivos.webp",
-    alt: "Aditivos e produtos de manutenção nas prateleiras da loja",
-  },
-  {
-    src: "/images/hero-loja-tintas.webp",
-    alt: "Linha de tintas, massas e material de repintura da Tourón",
-  },
-];
 
 const trust = [
   { icon: Truck, label: "Entrega grátis", sub: "1º distrito" },
@@ -174,7 +153,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.15, ease }}
           className="relative mx-auto w-full max-w-lg"
         >
-          <HeroCarousel slides={slides} />
+          <HeroCarousel slides={heroSlides} />
 
           {/* cartão flutuante — entrega */}
           <motion.div
