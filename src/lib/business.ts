@@ -54,7 +54,16 @@ export const business = {
   googleRating: { value: "4,3", count: 142 },
   delivery: {
     area: "1º distrito de Petrópolis",
-    note: "Entrega sem taxa no 1º distrito de Petrópolis. Demais regiões, consulte pelo WhatsApp.",
+    note: "Entrega sem taxa no 1º distrito de Petrópolis. Confirme a cobertura do seu endereço pelo WhatsApp antes de fechar o pedido.",
+    /**
+     * O 1º distrito não é verificável pelo consumidor: a Prefeitura de
+     * Petrópolis reconhece publicamente que os bairros não são formalizados e
+     * que a divisa distrital vai ser redesenhada — vários bairros ficam
+     * partidos entre o 1º e o 2º distrito (Caxambu é 47%/52%). Não há consulta
+     * por endereço ou CEP. Enquanto a loja não definir uma lista de bairros ou
+     * um raio em km, o site sempre manda confirmar o endereço no atendimento.
+     */
+    coverageNote: "Confirme a cobertura do seu endereço pelo WhatsApp.",
   },
 } as const;
 

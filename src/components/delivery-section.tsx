@@ -20,7 +20,7 @@ const steps = [
   {
     icon: Bike,
     title: "Sai para entrega",
-    text: `Sem taxa no ${business.delivery.area}. Fora dessa área, a gente combina na hora.`,
+    text: `Sem taxa no ${business.delivery.area}. Manda seu endereço junto que a gente confirma a cobertura na hora.`,
   },
 ];
 

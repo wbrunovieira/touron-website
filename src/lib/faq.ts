@@ -1,7 +1,7 @@
 export const faq = [
   {
     q: "Vocês entregam em Petrópolis?",
-    a: "Sim. Levamos o pedido até você sem taxa no 1º distrito de Petrópolis. Para outras regiões, é só chamar no WhatsApp que a gente combina a entrega.",
+    a: "Sim. Levamos o pedido até você sem taxa no 1º distrito de Petrópolis. Como a divisa dos distritos não é fácil de conferir, manda seu endereço no WhatsApp que a gente confirma na hora se está na área — e, se não estiver, combina a entrega mesmo assim.",
   },
   {
     q: "Como faço para saber se a peça serve no meu carro?",

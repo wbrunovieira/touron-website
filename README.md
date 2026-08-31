@@ -57,6 +57,24 @@ de pendente está abaixo, em ordem de risco.
 - [ ] **Formas de pagamento.** Mesmo mecanismo: `paymentConfirmed: false`.
 - [ ] **Domínio.** `siteUrl` aponta para `touronautopecas.com.br`, que vai para
       o sitemap e para as URLs canônicas. Confirmar que o domínio é deles.
+- [ ] **Definir a área de entrega por um critério que o cliente consiga
+      conferir sozinho** — lista de bairros ou raio em km a partir da loja.
+      "1º distrito" não serve: a própria Prefeitura declara que *"os bairros de
+      Petrópolis não são formalizados"* e que a divisa distrital será
+      redesenhada. Bairros ficam partidos entre o 1º e o 2º distrito (Caxambu
+      47%/52%, Rocio 57%/43%, Carangola 61%/39%) e **não existe consulta de
+      distrito por endereço ou CEP**. O 1º distrito tem ~132 km², dos quais
+      ~41 km² são zona rural de serra. Pelo CDC art. 30 a oferta anunciada
+      vincula — com um critério que ninguém consegue verificar, isso é risco
+      real. A loja está confirmadamente dentro do 1º distrito (a Rua Coronel
+      Veiga está 100% nele), então o problema é só a fronteira externa.
+      *Mitigação já aplicada:* o site pede em todo lugar para confirmar a
+      cobertura do endereço pelo WhatsApp.
+- [ ] **Bairro: "Centro" ou "Coronel Veiga"?** A arte da loja diz "Centro"; a
+      ficha do Google Maps registra "R. Cel. Veiga, 233 - **Cel. Veiga**,
+      Petrópolis - RJ, 25655-151". O site usa "Centro". Para SEO local o
+      endereço do site deve bater exatamente com o do Google Meu Negócio —
+      alinhar os dois.
 
 ### Revisar com quem está no balcão
 

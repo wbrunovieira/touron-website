@@ -18,7 +18,7 @@ const detalhes = [
   {
     icon: MapPin,
     title: "Onde entregamos",
-    text: `Sem taxa no ${business.delivery.area}. Demais bairros e distritos: a gente calcula na hora e combina com você pelo WhatsApp.`,
+    text: `Sem taxa no ${business.delivery.area}. Não sabe se o seu endereço entra? Manda no WhatsApp que a gente confirma na hora — e para fora da área a gente calcula e combina com você.`,
   },
   {
     icon: Clock,
