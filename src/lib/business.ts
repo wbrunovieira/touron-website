@@ -31,17 +31,26 @@ export const business = {
     "https://www.google.com/maps/place/Tour%C3%B3n-Auto+Pe%C3%A7as/@-22.5224025,-43.1899729,17z",
   mapsEmbed:
     "https://www.google.com/maps?q=Tour%C3%B3n%20Auto%20Pe%C3%A7as%2C%20R.%20Cel.%20Veiga%20233%2C%20Petr%C3%B3polis%20-%20RJ&output=embed",
-  // TODO CONFIRMAR COM O CLIENTE antes de publicar em produção.
+  /**
+   * Horário NÃO confirmado com o cliente. Enquanto `hoursConfirmed` for false,
+   * o site não exibe horário nem publica `openingHours` no JSON-LD — publicar
+   * horário errado é pior do que não publicar nenhum.
+   * Ao confirmar: preencher `hours`/`hoursSchema` e virar a flag para true.
+   */
+  hoursConfirmed: false,
   hours: [
-    { label: "Segunda a sexta", value: "08h às 18h" },
-    { label: "Sábado", value: "08h às 13h" },
-    { label: "Domingo e feriados", value: "Fechado" },
+    { label: "Segunda a sexta", value: "" },
+    { label: "Sábado", value: "" },
+    { label: "Domingo e feriados", value: "" },
   ],
-  hoursSchema: [
-    "Mo-Fr 08:00-18:00",
-    "Sa 08:00-13:00",
-  ],
-  // Nota pública do perfil no Google Maps (verificar periodicamente).
+  hoursSchema: [] as string[],
+  /** Formas de pagamento também não confirmadas com o cliente. */
+  paymentConfirmed: false,
+  payment: "Dinheiro, PIX, Cartão de débito, Cartão de crédito",
+  /**
+   * Lido diretamente da ficha do Google Maps da loja em 31/08/2026.
+   * Reconferir de tempos em tempos — a contagem muda.
+   */
   googleRating: { value: "4,3", count: 142 },
   delivery: {
     area: "1º distrito de Petrópolis",

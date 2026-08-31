@@ -74,7 +74,7 @@ const jsonLd = {
   logo: `${siteUrl}/brand/icon-512.png`,
   priceRange: "$$",
   currenciesAccepted: "BRL",
-  paymentAccepted: "Dinheiro, PIX, Cartão de débito, Cartão de crédito",
+  ...(business.paymentConfirmed ? { paymentAccepted: business.payment } : {}),
   address: {
     "@type": "PostalAddress",
     streetAddress: business.address.street,
@@ -88,7 +88,7 @@ const jsonLd = {
     latitude: business.geo.lat,
     longitude: business.geo.lng,
   },
-  openingHours: business.hoursSchema,
+  ...(business.hoursConfirmed ? { openingHours: business.hoursSchema } : {}),
   sameAs: [business.instagram.url],
   areaServed: {
     "@type": "City",

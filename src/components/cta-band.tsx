@@ -6,7 +6,7 @@ import { waMessages, whatsappLink } from "@/lib/whatsapp";
 export function CtaBand({
   title = "Precisa de uma peça agora?",
   highlight = "A gente resolve.",
-  description = "Manda o modelo do seu carro no WhatsApp. Respondemos rápido, no horário comercial, e entregamos no 1º distrito sem taxa.",
+  description = "Manda o modelo do seu carro no WhatsApp. A gente confere a aplicação e entrega no 1º distrito de Petrópolis sem taxa.",
   message = waMessages.general,
 }: {
   title?: string;

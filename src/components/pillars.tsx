@@ -12,7 +12,7 @@ const pillars = [
   {
     icon: Award,
     title: "Meio século de balcão",
-    text: "Desde 1974 no mesmo endereço, atendendo três gerações de motoristas de Petrópolis. A gente conhece o carro do bairro.",
+    text: "Desde 1974 na Rua Coronel Veiga, no Centro. Mais de meio século vendo o que roda — e o que quebra — nas ruas de Petrópolis.",
   },
   {
     icon: Handshake,
@@ -27,7 +27,7 @@ const pillars = [
   {
     icon: MessageCircle,
     title: "Resolvido no WhatsApp",
-    text: "Foto da peça antiga, modelo e ano. Em minutos você tem resposta, preço e a entrega combinada.",
+    text: "Foto da peça antiga, modelo e ano. A gente confere a aplicação e volta com preço e entrega combinada.",
   },
 ];
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Bike, Clock, MapPin, PackageCheck } from "lucide-react";
+import { Bike, MapPin, PackageCheck, Tag } from "lucide-react";
 import { Reveal } from "./ui/reveal";
 import { ButtonAnchor } from "./ui/button";
 import { WhatsappIcon } from "./ui/category-icon";
@@ -105,11 +105,11 @@ export function DeliverySection() {
               />
             </div>
             <div className="absolute -bottom-9 -left-4 flex items-center gap-3 rounded-3xl bg-navy-950 px-5 py-4 shadow-2xl ring-1 ring-white/15 sm:-left-8">
-              <Clock className="size-5 text-ember-400" strokeWidth={2} />
+              <Tag className="size-5 text-ember-400" strokeWidth={2} />
               <div>
-                <p className="text-sm font-bold text-white">No mesmo dia</p>
+                <p className="text-sm font-bold text-white">Sem taxas*</p>
                 <p className="font-mono text-[0.65rem] uppercase tracking-wider text-ink-400">
-                  pedidos em horário comercial
+                  * 1º distrito de Petrópolis
                 </p>
               </div>
             </div>

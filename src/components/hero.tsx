@@ -13,7 +13,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const trust = [
   { icon: Truck, label: "Entrega grátis", sub: "1º distrito" },
-  { icon: ShieldCheck, label: "Marcas de linha", sub: "originais e OEM" },
+  { icon: ShieldCheck, label: "Marcas de linha", sub: "Lubrax · Bardahl · Kondor" },
   { icon: MapPin, label: "Centro", sub: "Cel. Veiga, 233" },
 ];
 

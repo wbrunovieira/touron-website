@@ -8,6 +8,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { Counter } from "@/components/ui/counter";
 import { business, yearsInBusiness } from "@/lib/business";
 import { categories } from "@/lib/categories";
+import { brands } from "@/lib/brands";
 
 export const metadata: Metadata = {
   title: "A loja — mais de 50 anos em Petrópolis",
@@ -20,19 +21,19 @@ const marcos = [
     ano: "1974",
     titulo: "A porta abre",
     texto:
-      "A Tourón começa a atender os motoristas de Petrópolis na Rua Coronel Veiga, no Centro. O endereço nunca mudou.",
-  },
-  {
-    ano: "Anos 90",
-    titulo: "A frota muda, a loja acompanha",
-    texto:
-      "Injeção eletrônica, carros populares e a chegada do GNV na cidade. O estoque cresce junto com a demanda da serra.",
+      "É o ano que está no logo da loja até hoje: Tourón, desde 1974, atendendo os motoristas de Petrópolis.",
   },
   {
     ano: "Hoje",
+    titulo: "Carro, moto e GNV",
+    texto:
+      "Do óleo de motor à bateria de moto, da cera de carnaúba ao emulador de bico para veículo convertido a GNV. Linha leve completa no balcão.",
+  },
+  {
+    ano: "Agora",
     titulo: "Balcão e WhatsApp",
     texto:
-      "O mesmo atendimento de sempre, agora também pelo celular — com entrega no 1º distrito e resposta em minutos.",
+      "O mesmo atendimento de sempre, agora também pelo celular — com entrega no 1º distrito de Petrópolis.",
   },
 ];
 
@@ -50,7 +51,7 @@ const valores = [
   {
     icon: Wrench,
     title: "Conhecimento de balcão",
-    text: "Anos vendo o que quebra em cada modelo. Você chega com o problema, sai com a peça certa.",
+    text: "Meio século vendo o que quebra em cada modelo. Você chega com o problema, a gente confere a aplicação.",
   },
   {
     icon: MapPin,
@@ -66,7 +67,7 @@ export default function SobrePage() {
         eyebrow="A loja"
         title="Desde 1974 no"
         highlight="Centro de Petrópolis"
-        description={`${yearsInBusiness} anos no mesmo endereço, atendendo três gerações de motoristas da serra. ${business.tagline}`}
+        description={`${yearsInBusiness} anos na Rua Coronel Veiga, atendendo os motoristas da serra. ${business.tagline}`}
         image="/images/prateleira-aditivos.webp"
         breadcrumbs={[
           { href: "/", label: "Início" },
@@ -80,8 +81,8 @@ export default function SobrePage() {
             <RevealGroup className="grid gap-4 sm:grid-cols-3">
               {[
                 { v: yearsInBusiness, s: "+", l: "anos de história" },
-                { v: 3, s: "", l: "gerações atendidas" },
-                { v: categories.length, s: "", l: "categorias no balcão" },
+                { v: brands.length, s: "+", l: "marcas no balcão" },
+                { v: categories.length, s: "", l: "categorias" },
               ].map((x) => (
                 <RevealItem
                   key={x.l}

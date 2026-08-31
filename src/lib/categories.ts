@@ -17,7 +17,7 @@ export const categories: Category[] = [
     name: "Óleos e Lubrificantes",
     short: "Óleos",
     blurb:
-      "Óleo de motor, câmbio, transmissão automática e lubrificantes para carro e moto — sintético, semissintético e mineral, na viscosidade que o seu manual pede.",
+      "Óleo de motor, câmbio, transmissão automática e lubrificantes para carro e moto — sintético e semissintético, na viscosidade que o seu manual pede.",
     icon: "Droplet",
     image: "/images/cat-oleos.webp",
     accent: "from-amber-400 to-orange-600",
@@ -28,7 +28,7 @@ export const categories: Category[] = [
       "Óleo para motos 2T e 4T",
       "Graxas e lubrificantes de chassi",
     ],
-    brands: ["Lubrax", "Petronas", "Ipiranga", "Texaco", "Radnaq"],
+    brands: ["Lubrax", "Ipiranga", "Texaco", "Radnaq"],
   },
   {
     slug: "aditivos-e-fluidos",
@@ -41,7 +41,7 @@ export const categories: Category[] = [
     accent: "from-rose-400 to-red-600",
     items: [
       "Aditivo de radiador concentrado e pronto uso",
-      "Fluido de freio DOT 3 e DOT 4",
+      "Selante para radiador (stop leak)",
       "Água desmineralizada",
       "Condicionador de metais e anti-atrito",
       "Limpa-bicos, limpa radiador e selante",
@@ -53,15 +53,14 @@ export const categories: Category[] = [
     name: "Baterias",
     short: "Baterias",
     blurb:
-      "Bateria para carro, moto e utilitário com a amperagem certa, teste na hora e orientação de instalação. Também para veículos com GNV.",
+      "Bateria para carro e moto na amperagem certa para o seu modelo. Manda a marca, o modelo e o ano no WhatsApp que a gente confere antes de você vir buscar.",
     icon: "BatteryCharging",
     image: "/images/cat-baterias.webp",
     accent: "from-lime-400 to-emerald-600",
     items: [
-      "Baterias 45Ah a 100Ah para automóveis",
-      "Baterias AGM e seladas para motos",
+      "Baterias 12V para automóvel (linha Kondor)",
+      "Baterias AGM e seladas para motos (linha Haizer)",
       "Baterias para utilitários e caminhonetes",
-      "Teste de carga e alternador",
       "Cabos, bornes e chaves de bateria",
     ],
     brands: ["Kondor", "Haizer"],
@@ -82,7 +81,7 @@ export const categories: Category[] = [
       "Limpa-vidros e cristalizador",
       "Renovador de plásticos e pretinho",
     ],
-    brands: ["Abro", "Grand Prix", "Bardahl", "Orbi Química"],
+    brands: ["Abro", "Grand Prix", "Proauto"],
   },
   {
     slug: "aromatizantes",
@@ -100,7 +99,7 @@ export const categories: Category[] = [
       "Limpa ar-condicionado",
       "Essências automotivas",
     ],
-    brands: ["Little Trees", "Orbi Air", "Cariocar", "Fresh Car"],
+    brands: ["Little Trees", "Orbi Química", "Cariocar", "Luxcar"],
   },
   {
     slug: "palhetas-e-limpadores",
@@ -118,7 +117,7 @@ export const categories: Category[] = [
       "Aditivo e desengordurante de para-brisa",
       "Borrachas de reposição",
     ],
-    brands: ["Indisa", "Orbi Química"],
+    brands: [],
   },
   {
     slug: "som-e-acessorios",
@@ -136,7 +135,7 @@ export const categories: Category[] = [
       "Tapetes, capas e organizadores",
       "Carregadores veiculares e suportes",
     ],
-    brands: ["Cindy"],
+    brands: ["Cinoy"],
   },
   {
     slug: "ferramentas",
@@ -154,7 +153,7 @@ export const categories: Category[] = [
       "Alicates, chaves de fenda e martelos",
       "Cabos de chupeta e compressores",
     ],
-    brands: ["Hulk", "Speed Way"],
+    brands: ["Hulk"],
   },
   {
     slug: "pneus-e-emergencia",
@@ -172,7 +171,7 @@ export const categories: Category[] = [
       "Triângulo, colete e extintor",
       "Bicos, válvulas e contrapesos",
     ],
-    brands: ["Speed Way", "Abro"],
+    brands: ["SW", "Abro"],
   },
   {
     slug: "pecas-de-reposicao",
@@ -190,7 +189,7 @@ export const categories: Category[] = [
       "Filtros de óleo, ar, combustível e cabine",
       "Peças e componentes para GNV",
     ],
-    brands: ["Indisa", "Ipiranga"],
+    brands: ["Indisa"],
   },
   {
     slug: "tintas-e-repintura",
@@ -226,7 +225,7 @@ export const categories: Category[] = [
       "Sabão pasta e pasta desengraxante",
       "Vaselina sólida e estopa",
     ],
-    brands: ["WD-40", "Gitanes", "Car Lub", "Chesf Lub"],
+    brands: ["WD-40", "Gitanes", "Car 80", "Chesy Lub"],
   },
 ];
 

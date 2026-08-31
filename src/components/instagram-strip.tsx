@@ -6,7 +6,7 @@ import { InstagramIcon } from "./ui/category-icon";
 import { business } from "@/lib/business";
 
 const posts = [
-  { src: "/images/post-cera.webp", alt: "Ceras automotivas disponíveis na loja" },
+  { src: "/images/post-cera.webp", alt: "Óleos de motor Lubrax 5W-30, 15W-40 e 25W-50" },
   { src: "/images/post-bomba.webp", alt: "Kit bomba de combustível" },
   { src: "/images/post-limpa-vidros.webp", alt: "Limpa-vidros automotivo" },
   { src: "/images/post-selante.webp", alt: "Selante para radiador Stop Leak" },

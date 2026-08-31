@@ -71,14 +71,24 @@ export function ContactSection() {
                 <p className="font-display text-base font-bold text-white">
                   Horário de funcionamento
                 </p>
-                <ul className="mt-2 space-y-1 text-sm text-ink-400">
-                  {business.hours.map((h) => (
-                    <li key={h.label} className="flex justify-between gap-6">
-                      <span>{h.label}</span>
-                      <span className="font-mono text-ink-300">{h.value}</span>
-                    </li>
-                  ))}
-                </ul>
+                {business.hoursConfirmed ? (
+                  <ul className="mt-2 space-y-1 text-sm text-ink-400">
+                    {business.hours.map((h) => (
+                      <li key={h.label} className="flex justify-between gap-6">
+                        <span>{h.label}</span>
+                        <span className="font-mono text-ink-300">{h.value}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-2 text-sm leading-relaxed text-ink-400">
+                    Confirme o horário do dia pelo WhatsApp{" "}
+                    <span className="font-mono text-ink-300">
+                      {business.whatsapp.display}
+                    </span>{" "}
+                    antes de vir até a loja.
+                  </p>
+                )}
               </div>
             </div>
 

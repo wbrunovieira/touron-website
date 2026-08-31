@@ -10,7 +10,7 @@ import { waMessages } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Entrega de auto peças em Petrópolis",
-  description: `A ${business.name} leva a peça até você sem taxa no ${business.delivery.area}. Peça pelo WhatsApp e receba no mesmo dia, em horário comercial.`,
+  description: `A ${business.name} leva a peça até você sem taxa no ${business.delivery.area}. Peça pelo WhatsApp e combine a entrega com a loja.`,
   alternates: { canonical: "/entrega" },
 };
 
@@ -23,12 +23,12 @@ const detalhes = [
   {
     icon: Clock,
     title: "Prazo",
-    text: "Pedidos confirmados dentro do horário comercial normalmente saem para entrega no mesmo dia, conforme a disponibilidade da peça.",
+    text: "Combinamos a entrega com você no WhatsApp, conforme a disponibilidade da peça. Você fica sabendo antes de fechar o pedido.",
   },
   {
     icon: Wallet,
     title: "Pagamento",
-    text: "PIX, dinheiro ou cartão. Você confirma o valor total no WhatsApp antes da entrega — sem surpresa na porta.",
+    text: "Você confirma o valor total e a forma de pagamento com a loja pelo WhatsApp antes da entrega — sem surpresa na porta.",
   },
 ];
 
@@ -69,9 +69,9 @@ export default function EntregaPage() {
 
           <Reveal className="mt-8">
             <p className="text-xs leading-relaxed text-ink-500">
-              * Condições de entrega sujeitas à disponibilidade e ao horário de
-              funcionamento da loja. Valores e prazos são confirmados no
-              atendimento.
+              * Entrega sem taxa no 1º distrito de Petrópolis, conforme
+              anunciado pela loja. Área de cobertura, prazos e valores são
+              confirmados no atendimento.
             </p>
           </Reveal>
         </div>

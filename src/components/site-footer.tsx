@@ -105,13 +105,22 @@ export function SiteFooter() {
           </a>
           <div className="flex gap-3 text-sm text-ink-400">
             <Clock className="mt-0.5 size-4 shrink-0 text-ember-400" />
-            <ul className="space-y-1">
-              {business.hours.map((h) => (
-                <li key={h.label}>
-                  <span className="text-ink-300">{h.label}:</span> {h.value}
-                </li>
-              ))}
-            </ul>
+            {business.hoursConfirmed ? (
+              <ul className="space-y-1">
+                {business.hours.map((h) => (
+                  <li key={h.label}>
+                    <span className="text-ink-300">{h.label}:</span> {h.value}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <span>
+                Confirme o horário pelo WhatsApp{" "}
+                <span className="font-mono text-ink-300">
+                  {business.whatsapp.display}
+                </span>
+              </span>
+            )}
           </div>
         </div>
       </div>

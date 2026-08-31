@@ -17,10 +17,10 @@ export const faq = [
   },
   {
     q: "Quais formas de pagamento vocês aceitam?",
-    a: "Dinheiro, PIX e cartões de débito e crédito. Condições de parcelamento você confirma com a loja no momento da compra.",
+    a: "Confirme as formas de pagamento e as condições de parcelamento direto com a loja, pelo WhatsApp ou no balcão.",
   },
   {
     q: "Preciso agendar para ser atendido?",
-    a: "Não. É só chegar na Rua Coronel Veiga, 233, no Centro, dentro do horário de funcionamento. Se preferir, adianta o pedido pelo WhatsApp e deixa separado.",
+    a: "Não. É só chegar na Rua Coronel Veiga, 233, no Centro. Se preferir, adianta o pedido pelo WhatsApp e a gente deixa separado — aproveita e confirma o horário do dia.",
   },
 ];

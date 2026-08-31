@@ -113,21 +113,26 @@ export default async function CategoriaPage({
             </RevealGroup>
 
             <Reveal className="mt-10">
-              <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-ink-500">
-                Marcas nesta categoria
-              </p>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {category.brands.map((b) => (
-                  <li
-                    key={b}
-                    className="rounded-full bg-white/5 px-4 py-2 text-sm font-medium text-ink-300 ring-1 ring-inset ring-white/10"
-                  >
-                    {b}
-                  </li>
-                ))}
-              </ul>
+              {category.brands.length > 0 ? (
+                <>
+                  <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-ink-500">
+                    Marcas nesta categoria
+                  </p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {category.brands.map((b) => (
+                      <li
+                        key={b}
+                        className="rounded-full bg-white/5 px-4 py-2 text-sm font-medium text-ink-300 ring-1 ring-inset ring-white/10"
+                      >
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
               <p className="mt-4 max-w-xl text-xs leading-relaxed text-ink-500">
-                A disponibilidade varia conforme o estoque. Consulte pelo
+                Esta lista é uma amostra do que a loja costuma trabalhar. A
+                disponibilidade varia conforme o estoque — consulte pelo
                 WhatsApp antes de vir até a loja.
               </p>
             </Reveal>
