@@ -153,8 +153,8 @@ export function Hero() {
         >
           <div className="relative aspect-4/5 overflow-hidden rounded-5xl ring-1 ring-white/12">
             <Image
-              src="/images/hero-prateleira.webp"
-              alt="Prateleira de aditivos e produtos automotivos na loja da Tourón Auto Peças"
+              src="/images/hero-loja-baterias.webp"
+              alt="Expositor de baterias automotivas no salão da loja Auto Peças Tourón, em Petrópolis"
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 480px"

@@ -18,7 +18,7 @@ export default function ContatoPage() {
         title="Fale com a"
         highlight="Tourón"
         description={`Estamos na ${business.address.street}, no ${business.address.district} de ${business.address.city}. Atendimento no balcão, por telefone e pelo WhatsApp.`}
-        image="/images/hero-prateleira.webp"
+        image="/images/hero-loja-baterias.webp"
         breadcrumbs={[
           { href: "/", label: "Início" },
           { href: "/contato", label: "Contato" },

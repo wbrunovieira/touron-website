@@ -13,7 +13,7 @@ const posts = [
   { src: "/images/post-lubrificantes.webp", alt: "Linha de lubrificantes" },
   { src: "/images/fluidos-coloridos.webp", alt: "Aditivos e fluidos coloridos" },
   { src: "/images/post-gnv.webp", alt: "Peças para veículos com GNV" },
-  { src: "/images/loja-interior.webp", alt: "Interior da loja Tourón Auto Peças" },
+  { src: "/images/cat-ferramentas.webp", alt: "Macaco hidráulico disponível na loja" },
 ];
 
 export function InstagramStrip() {
