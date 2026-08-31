@@ -15,7 +15,7 @@ export function SiteFooter() {
       />
       <div className="container-x relative grid gap-12 py-16 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr] lg:py-20">
         <div className="flex flex-col gap-5">
-          <Logo className="h-14 w-auto" />
+          <Logo className="h-14 w-auto self-start" />
           <p className="max-w-xs text-sm leading-relaxed text-ink-400">
             {business.tagline} {yearsInBusiness} anos de estrada atendendo os
             motoristas de {business.address.city}.

@@ -17,20 +17,20 @@ export function CategoryCard({
   return (
     <Link
       href={`/categorias/${category.slug}`}
-      className="group card-edge relative flex h-full flex-col overflow-hidden rounded-4xl bg-navy-850/60 transition-all duration-500 hover:-translate-y-1.5"
+      className="group card-edge relative flex h-full flex-col overflow-hidden rounded-4xl bg-navy-850/60 transition-[transform,background-color] duration-500 will-change-transform hover:-translate-y-1.5"
     >
-      <div className="relative aspect-16/11 overflow-hidden">
+      <div className="relative aspect-16/11 overflow-hidden isolate [transform:translateZ(0)] [backface-visibility:hidden]">
         <Image
           src={category.image}
           alt={category.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           loading={index < 3 ? "eager" : "lazy"}
-          className="object-cover transition-transform duration-700 group-hover:scale-108"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-linear-0 from-navy-950 via-navy-950/45 to-transparent" />
         <div
-          className={`absolute inset-0 bg-linear-135 ${category.accent} opacity-0 mix-blend-soft-light transition-opacity duration-500 group-hover:opacity-70`}
+          className={`absolute inset-0 bg-linear-135 ${category.accent} opacity-0 transition-opacity duration-500 group-hover:opacity-25`}
         />
         <span className="absolute left-5 top-5 grid size-11 place-items-center rounded-2xl border border-white/15 bg-navy-950/60 text-neon-300 backdrop-blur-md transition-colors duration-500 group-hover:text-ember-300">
           <CategoryIcon name={category.icon} className="size-5" />

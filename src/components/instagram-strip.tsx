@@ -50,7 +50,7 @@ export function InstagramStrip() {
                 href={business.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block size-52 overflow-hidden rounded-3xl ring-1 ring-white/10 sm:size-64"
+                className="group relative block size-52 overflow-hidden rounded-3xl ring-1 ring-white/10 isolate [transform:translateZ(0)] sm:size-64"
               >
                 <Image
                   src={p.src}

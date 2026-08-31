@@ -33,6 +33,12 @@ export const business = {
   maps: "https://maps.app.goo.gl/?q=Tour%C3%B3n+Auto+Pe%C3%A7as+Petr%C3%B3polis",
   mapsPlace:
     "https://www.google.com/maps/place/Tour%C3%B3n-Auto+Pe%C3%A7as/@-22.5224025,-43.1899729,17z",
+  /** Links universais: no celular abrem o app, no desktop abrem a web. */
+  nav: {
+    waze: "https://waze.com/ul?ll=-22.5224025,-43.1899729&navigate=yes",
+    googleMaps:
+      "https://www.google.com/maps/dir/?api=1&destination=-22.5224025,-43.1899729",
+  },
   mapsEmbed:
     "https://www.google.com/maps?q=Tour%C3%B3n%20Auto%20Pe%C3%A7as%2C%20R.%20Cel.%20Veiga%20233%2C%20Petr%C3%B3polis%20-%20RJ&output=embed",
 /**

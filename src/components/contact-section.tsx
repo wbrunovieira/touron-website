@@ -3,6 +3,7 @@ import { Reveal } from "./ui/reveal";
 import { SectionHeading } from "./ui/section-heading";
 import { ButtonAnchor } from "./ui/button";
 import { InstagramIcon, WhatsappIcon } from "./ui/category-icon";
+import { NavButtons } from "./nav-buttons";
 import { business, fullAddress } from "@/lib/business";
 import { waMessages, whatsappLink } from "@/lib/whatsapp";
 
@@ -45,6 +46,8 @@ export function ContactSection() {
                 </p>
               </div>
             </a>
+
+            <NavButtons />
 
             <a
               href={business.phone.href}
