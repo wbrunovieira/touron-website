@@ -1,26 +1,198 @@
 @import "tailwindcss";
 
+@theme {
+  /* ---- Marca ---------------------------------------------------------- */
+  --color-navy-950: #01030f;
+  --color-navy-900: #02051f;
+  --color-navy-850: #030736;
+  --color-navy-800: #040957; /* azul oficial da Tourón */
+  --color-navy-700: #0a1180;
+  --color-navy-600: #1a26b8;
+  --color-navy-500: #3243e6;
+  --color-navy-400: #6a78ff;
+  --color-navy-300: #a5aeff;
+
+  --color-ember-600: #d94a00;
+  --color-ember-500: #ff6a00;
+  --color-ember-400: #ff9d1c;
+  --color-ember-300: #ffc861;
+
+  --color-neon-500: #00b8e6;
+  --color-neon-400: #38e0ff;
+  --color-neon-300: #8befff;
+
+  --color-ink-100: #eef1ff;
+  --color-ink-300: #b7bee0;
+  --color-ink-400: #8b93bf;
+  --color-ink-500: #626a99;
+
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jet), ui-monospace, monospace;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.75rem;
+
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-marquee-slow: marquee 70s linear infinite;
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3.2s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -22px, 0) scale(1.04); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-navy-900);
+  color: var(--color-ink-100);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-ember-500);
+  color: #fff;
+}
+
+/* Scrollbar discreta ---------------------------------------------------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-navy-600) transparent;
+}
+
+/* Utilitários ----------------------------------------------------------- */
+@utility container-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 768px) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Textura de grão sobre gradientes */
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+}
+
+/* Grade técnica de fundo */
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(106, 120, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(106, 120, 255, 0.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-ink-100) 0%,
+    var(--color-navy-300) 42%,
+    var(--color-neon-400) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-ember {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-ember-300) 0%,
+    var(--color-ember-500) 55%,
+    var(--color-ember-600) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/* Borda gradiente em cartões */
+@utility card-edge {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      150deg,
+      rgba(165, 174, 255, 0.45),
+      rgba(56, 224, 255, 0.12) 35%,
+      rgba(255, 106, 0, 0) 60%,
+      rgba(255, 157, 28, 0.35)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@utility shine {
+  background-image: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* Máscaras de fade nas laterais dos marquees */
+@utility mask-edges {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
