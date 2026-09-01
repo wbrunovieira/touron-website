@@ -77,15 +77,16 @@ export const business = {
 } as const;
 
 /**
- * ATENÇÃO: `touronautopecas.com.br` NÃO está registrado (verificado no
- * registro.br em 31/08/2026 — o domínio está livre). Enquanto não for
- * comprado, o canônico, o sitemap, o robots e o Open Graph precisam apontar
- * para o host que realmente existe, senão o site fica inindexável e o preview
- * do WhatsApp dá 404.
- * Ao registrar o domínio: definir NEXT_PUBLIC_SITE_URL no projeto da Vercel.
+ * Host canônico. Vem de NEXT_PUBLIC_SITE_URL, definido no projeto da Vercel —
+ * hoje `https://touron.wbdigitalsolutions.com`, o subdomínio de apresentação.
+ *
+ * Quando o cliente registrar `touronautopecas.com.br` (verificado no
+ * registro.br em 31/08/2026: o domínio está LIVRE), é só apontar o DNS para a
+ * Vercel, adicionar o domínio ao projeto e trocar a variável. O canônico, o
+ * sitemap, o robots e o Open Graph acompanham sozinhos.
  */
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://touron-website.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://touron.wbdigitalsolutions.com";
 
 export const yearsInBusiness = new Date().getFullYear() - business.foundedYear;
 

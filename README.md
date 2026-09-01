@@ -49,8 +49,14 @@ O que dava para corrigir sozinho já foi. O que sobrou depende do dono.
 - [ ] **Registrar `touronautopecas.com.br`.** Verificado no registro.br em
       31/08/2026: **o domínio está livre**. Qualquer um registra por ~R$ 40/ano,
       inclusive um concorrente. Registrar também `autopecastouron.com.br` como
-      defensiva. Enquanto isso, `siteUrl` aponta para o host da Vercel — ao
-      comprar o domínio, basta definir `NEXT_PUBLIC_SITE_URL` no projeto.
+      defensiva.
+
+      O site hoje roda em **https://touron.wbdigitalsolutions.com** (subdomínio
+      de apresentação, DNS no Cloudflare via CNAME para a Vercel). Ao comprar o
+      domínio definitivo: apontar o DNS para a Vercel, rodar
+      `vercel domains add touronautopecas.com.br touron-website`, e trocar
+      `NEXT_PUBLIC_SITE_URL` no projeto — canônico, sitemap, robots e Open
+      Graph acompanham sozinhos.
 
 ### Confirmar com o dono
 
